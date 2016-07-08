@@ -9,6 +9,11 @@
 # http://stackoverflow.com/questions/9531683/problems-using-subprocess-call-in-python-2-7-2-on-windows
 # http://stackoverflow.com/questions/13744473/command-line-execution-in-different-folder
 
+# usage:
+# 1) place all TIF files for each landsat scene in separate folders
+# 2) set scenePath to directory containing scene folders
+# 3) make sure no other folders are present in the directory
+
 # --------------------------------
 
 # import subprocess and os modules
