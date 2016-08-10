@@ -2,13 +2,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-# C:\Users\SUST heavyweight\Desktop\daymedlst_ndvi.csv
-df = pd.read_csv(r'T:\JHoffman\Summer\NDVI\Sample_DayLST_NDVI.csv')
-df = df[df.day_medlst > 297.2]
-df = df[df.medNDVI > -0.1]
+df = pd.read_csv(r'C:\Users\SUST heavyweight\Desktop\daymedlst_ndvi.csv')
+x = np.array(df['GRID_CODE'])
+y = np.array(df['GRID_COD_1'])
 
-x = np.array(df['day_medlst'])  # GRID_CODE
-y = np.array(df['medNDVI'])     # GRID_COD_1
+# df = pd.read_csv(r'T:\JHoffman\Summer\NDVI\Sample_DayLST_NDVI.csv')
+# df = df[df.day_medlst > 297.2]
+# df = df[df.medNDVI > -0.1]
+# x = np.array(df['day_medlst'])
+# y = np.array(df['medNDVI'])
 
 plt.rc('font', family='serif', size=13)
 fig, ax = plt.subplots()
