@@ -7,12 +7,8 @@ df = pd.read_csv(r'T:\JHoffman\Summer\NDVI\Sample_DayLST_NDVI.csv')
 df = df[df.day_medlst > 297.2]
 df = df[df.medNDVI > -0.1]
 
-# n = 50
-# x = np.random.randn(n)
-# y = x * np.random.randn(n)
-
-x = np.array(df['day_medlst']) # GRID_CODE
-y = np.array(df['medNDVI']) # GRID_COD_1
+x = np.array(df['day_medlst'])  # GRID_CODE
+y = np.array(df['medNDVI'])     # GRID_COD_1
 
 plt.rc('font', family='serif', size=13)
 fig, ax = plt.subplots()
