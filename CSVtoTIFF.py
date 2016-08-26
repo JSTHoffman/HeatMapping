@@ -16,18 +16,19 @@
 # 5) set image width and height parameters
 # 6) set skipRows to 2* or 10**
 
-# *object parameters included during FLIRTools export
-# **object parameters not included during FLIRTools export
+# *object parameters not included during FLIRTools export
+# **object parameters included during FLIRTools export
 
 # ------------------------------------
 
 # import gdal, numpy, and os modules
 from osgeo import gdal
 import numpy, os
+import traceback
 
 # path to files
-csvPath = r"C:\Users\Sustainability\Desktop\Summer\CampusPhotoTest\CSVs"
-tifPath = r"C:\Users\Sustainability\Desktop\Summer\CampusPhotoTest\TIFFs"
+csvPath = r"C:\Users\SUST heavyweight\Documents\Photoscan\Test\Tree\Thermal\CSV"
+tifPath = r"C:\Users\SUST heavyweight\Documents\Photoscan\Test\Tree\Thermal\TIFF"
 
 # image parameters
 imgWidth = 320
@@ -68,8 +69,9 @@ for csv in os.listdir(csvPath):
 		dst_ds.GetRasterBand(1).WriteArray(dataArray)
 		dst_ds = None
 
-	except:
+	except Exception:
 		# give error message
+		print traceback.format_exc()
 		print "\nThe file {0} could not be converted.".format(inPath)
 
 	else:
